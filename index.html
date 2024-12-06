@@ -1,124 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Avaliação de Segurança do Trabalho</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #F7F8F9; /* Fundo cinza claro */
-      margin: 0;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    h1 {
-      color: #3643BA;
-    }
-    form {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 500px;
-    }
-    .question {
-      margin-bottom: 20px;
-    }
-    .question label {
-      display: block;
-      margin: 5px 0;
-    }
-    button {
-      background-color: #3643BA;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-size: 16px;
-      border-radius: 5px;
-    }
-    button:hover {
-      background-color: #7AFFA4; /* Verde claro ao passar o mouse */
-    }
-    input[type="text"] {
-      width: 100%;
-      padding: 8px;
-      margin: 10px 0;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Avaliação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f8f9;
+            color: #333;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        h2 {
+            text-align: center;
+            color: #3643ba;
+        }
+        label {
+            font-weight: bold;
+            margin: 10px 0;
+            display: block;
+        }
+        input[type="text"], input[type="radio"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #3643ba;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #7affa4;
+        }
+    </style>
 </head>
 <body>
-  <h1>Avaliação de Segurança do Trabalho</h1>
-  <form id="form">
-    <div>
-      <label for="nome">Digite seu nome:</label>
-      <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+
+    <div class="form-container">
+        <h2>Avaliação de Segurança do Trabalho</h2>
+        <form id="formulario" method="POST" action="https://script.google.com/macros/s/SEU_SCRIPT_URL/exec">
+            <!-- Campo Nome -->
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br>
+
+            <!-- Pergunta 1 -->
+            <label for="resposta1">Pergunta 1: Como você avalia o treinamento de segurança?</label><br>
+            <input type="radio" id="resposta1_1" name="resposta1" value="Excelente" required> Excelente
+            <input type="radio" id="resposta1_2" name="resposta1" value="Bom"> Bom
+            <input type="radio" id="resposta1_3" name="resposta1" value="Ruim"> Ruim<br>
+
+            <!-- Pergunta 2 -->
+            <label for="resposta2">Pergunta 2: Você se sente seguro no ambiente de trabalho?</label><br>
+            <input type="radio" id="resposta2_1" name="resposta2" value="Sim" required> Sim
+            <input type="radio" id="resposta2_2" name="resposta2" value="Não"> Não<br>
+
+            <!-- Pergunta 3 -->
+            <label for="resposta3">Pergunta 3: Como podemos melhorar a segurança no trabalho?</label><br>
+            <input type="text" id="resposta3" name="resposta3" required><br>
+
+            <!-- Botão de envio -->
+            <button type="submit">Enviar Respostas</button>
+        </form>
     </div>
-    <div class="question">
-      <p>1. Qual é a prioridade no combate a incêndio?</p>
-      <label><input type="radio" name="q1" value="A" required> A. Salvar bens materiais</label>
-      <label><input type="radio" name="q1" value="B"> B. Proteger vidas</label>
-      <label><input type="radio" name="q1" value="C"> C. Combater o fogo imediatamente</label>
-      <label><input type="radio" name="q1" value="D"> D. Esperar o bombeiro chegar</label>
-    </div>
-    <div class="question">
-      <p>2. Qual equipamento é essencial em trabalhos em altura?</p>
-      <label><input type="radio" name="q2" value="A" required> A. Luvas de proteção</label>
-      <label><input type="radio" name="q2" value="B"> B. Cinto de segurança</label>
-      <label><input type="radio" name="q2" value="C"> C. Botas antiderrapantes</label>
-      <label><input type="radio" name="q2" value="D"> D. Máscara respiratória</label>
-    </div>
-    <div class="question">
-      <p>3. O que fazer ao encontrar um derramamento químico?</p>
-      <label><input type="radio" name="q3" value="A" required> A. Limpar imediatamente</label>
-      <label><input type="radio" name="q3" value="B"> B. Avisar o supervisor e isolar a área</label>
-      <label><input type="radio" name="q3" value="C"> C. Ignorar se for pequeno</label>
-      <label><input type="radio" name="q3" value="D"> D. Jogar água sobre o local</label>
-    </div>
-    <button type="submit">Finalizar Avaliação</button>
-  </form>
 
-  <script>
-    const scriptURL = 'SEU_URL_DO_APLICATIVO'; // Substitua pelo URL do Apps Script
-
-    document.getElementById('form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      // Capturar os dados do formulário
-      const nome = document.getElementById('nome').value;
-      const respostas = [
-        document.querySelector('input[name="q1"]:checked').value,
-        document.querySelector('input[name="q2"]:checked').value,
-        document.querySelector('input[name="q3"]:checked').value,
-      ];
-
-      // Enviar os dados para o Google Sheets
-      const data = { nome, respostas };
-      try {
-        const response = await fetch(scriptURL, {
-          method: 'POST',
-          body: JSON.stringify(data),
-          headers: { 'Content-Type': 'application/json' }
-        });
-
-        if (response.ok) {
-          alert('Avaliação enviada com sucesso!');
-          document.getElementById('form').reset();
-        } else {
-          const errorData = await response.json();
-          alert(`Erro ao enviar: ${errorData.message}`);
-        }
-      } catch (error) {
-        console.error('Erro:', error);
-        alert('Erro ao conectar-se ao servidor.');
-      }
-    });
-  </script>
 </body>
 </html>
